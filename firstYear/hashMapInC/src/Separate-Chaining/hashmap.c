@@ -85,6 +85,7 @@ void insertHashMap(hashmap *map, char key[], float value) {
     
     if (loadFactor(map->capacity, map->length) >= 0.75) extendHashMap(map);
 
+    bool updateLength = true;
 
     int index = hashFunction(key, map->capacity);
     Node *temp = map->table[index];
@@ -96,14 +97,15 @@ void insertHashMap(hashmap *map, char key[], float value) {
             temp = temp->next;
         }
 
-        if (temp->key == key) {
+        if (strcmp(temp->key, key) == 0) {
             temp->value = value;
+            updateLength = false;
         } else {
             temp->next = initNode(key, value);
         }
     }
 
-    map->length++;
+    if (updateLength) map->length++;
 
 }
 
@@ -143,25 +145,33 @@ float loadFactor(int capacity, int length) {
     return capacity > 0 ? (float)length / capacity : 0.0;
 }
 
-void extendHashMap(hashmap *map){
-    int newCapacity = map->capacity*2;
+void extendHashMap(hashmap *map) {
+    int newCapacity = map->capacity * 2;
     Node **newTable = malloc(sizeof(Node *) * newCapacity);
-
     if (newTable == NULL) {
-        printf("Errors using malloc -> consider check u're pc <3");
+        printf("Errors using malloc -> consider check u're pc <3\n");
         exit(1);
     }
-    
-    for (int i=0; i<map->capacity; i++) {
+
+    for (int i = 0; i < newCapacity; i++) {
+        newTable[i] = NULL;
+    }
+
+    for (int i = 0; i < map->capacity; i++) {
         Node *temp = map->table[i];
         while (temp != NULL) {
+            Node *next = temp->next;      
             int newIndex = hashFunction(temp->key, newCapacity);
+
+            temp->next = newTable[newIndex];
             newTable[newIndex] = temp;
-            temp = temp->next;
+
+            temp = next;                 
         }
     }
 
+    free(map->table);   
     map->table = newTable;
     map->capacity = newCapacity;
-
 }
+
