@@ -15,7 +15,7 @@ int main() {
     }
     
     printHashMap(map);
-    printf("\nEuler is born in %0.0f\n", get(map, "Euler"));
+    printf("\nEuler is born in %0.0f\n", get(map, "Euler")); //The best leave first
     printf("Load factor is : %0.3f\n", loadFactor(map->capacity, map->length));
 
     removeHashMap(map, "Euler");
