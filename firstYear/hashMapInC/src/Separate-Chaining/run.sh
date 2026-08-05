@@ -1,5 +1,5 @@
 #!/bin/bash
 
-gcc -o main main.c hashmap.c
+gcc -g -fsanitize=address -fno-omit-frame-pointer -o main main.c hashmap.c
 chmod +x main
 ./main

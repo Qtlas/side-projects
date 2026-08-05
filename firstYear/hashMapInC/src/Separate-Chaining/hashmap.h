@@ -23,5 +23,7 @@ void removeHashMap(hashmap *map, char key[]);
 void printHashMap(hashmap *map);
 float loadFactor(int capacity, int ength);
 void extendHashMap(hashmap *map);
+bool isEmptyHashMap(hashmap *map);
+float get(hashmap *map, char key[]);
 
 #endif

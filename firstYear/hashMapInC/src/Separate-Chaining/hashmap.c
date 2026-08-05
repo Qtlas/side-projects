@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "hashmap.h"
 
 #define INIT_ARRAY_SIZE 8
@@ -42,6 +43,11 @@ hashmap *initHashMap() {
     map->table = table;
 
     return map;
+}
+
+
+bool isEmptyHashMap(hashmap *map) {
+    return map->length == 0;
 }
 
 
@@ -110,6 +116,23 @@ void insertHashMap(hashmap *map, char key[], float value) {
 }
 
 
+float get(hashmap *map, char key[]) {
+    if (isEmptyHashMap(map)) return NAN;
+    int index = hashFunction(key, map->capacity);
+    Node *temp = map->table[index];
+
+    while(temp != NULL && strcmp(temp->key, key) != 0) {
+        temp = temp->next;
+    }
+
+    if (temp == NULL) {
+        return NAN;
+    } else {
+        return temp->value;
+    }
+}
+
+
 void removeHashMap(hashmap *map, char key[]) {
 
     int index = hashFunction(key, map->capacity);
@@ -174,4 +197,6 @@ void extendHashMap(hashmap *map) {
     map->table = newTable;
     map->capacity = newCapacity;
 }
+
+
 
