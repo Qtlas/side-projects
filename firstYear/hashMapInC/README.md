@@ -117,6 +117,8 @@ index 7 -> ["Tom", 5.0] -> NULL
 
 The cost stays O(1) on average, but degrades to O(n) in the worst case if many keys collide into the same slot.
 
+If you want to see how I really built it, go check [my implementation](src/Separate-Chaining).
+
 ---
 
 #### Open addressing
