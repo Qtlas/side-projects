@@ -9,7 +9,7 @@ Here you can look at various of my info, network and cyber projects, and some ot
   <li><b>#cybersecurity</b> - <a href="firstYear/cve-dashboard">cve-dashboard</a>: a terminal dashboard to explore and analyze CVE (security vulnerability) data.</li>
   <li><b>#datastructures</b> - <a href="firstYear/hashMapInC">hashMapInC</a>: my own hashmap implementation in C, with a small article explaining how hashmaps work.</li>
   <li><b>#database</b> - <a href="firstYear/sql-project">sql-project</a>: a desktop app to explore a football database with SQL queries and a graphical interface.</li>
-  <li><b>#nework</b> - <a href="firstYear/WorldFootballLeague-Network">World-Football-League-Network</a>: a multi-site network for five football clubs, with secure LANs, VLANs, and DNS, DHCP, web, and NTP services.</li>
+  <li><b>#nework</b> - <a href="firstYear/World-Football-League-Network">World-Football-League-Network</a>: a multi-site network for five football clubs, with secure LANs, VLANs, and DNS, DHCP, web, and NTP services.</li>
 </ul>
 
 ## High school
