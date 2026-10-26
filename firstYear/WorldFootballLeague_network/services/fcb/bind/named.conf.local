@@ -1,0 +1,21 @@
+// ============================================================
+//  named.conf.local for the FC Barcelona DNS
+//  Authoritative for fcb.wfl.lan and the reverse zone 172.20.131.0/24
+//  Dynamic updates come from the local Kea DDNS (127.0.0.1)
+// ============================================================
+
+zone "fcb.wfl.lan" {
+    type master;
+    file "/etc/bind/zones/db.fcb.wfl.lan";
+    allow-transfer { none; };
+    allow-update { 127.0.0.1; };
+    notify no;
+};
+
+zone "131.20.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/zones/db.131.20.172";
+    allow-transfer { none; };
+    allow-update { 127.0.0.1; };
+    notify no;
+};

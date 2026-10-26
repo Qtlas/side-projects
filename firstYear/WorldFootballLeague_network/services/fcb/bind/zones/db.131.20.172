@@ -1,0 +1,15 @@
+; ============================================================
+;  Reverse zone: 172.20.131.0/24 (FC Barcelona)
+; ============================================================
+$TTL 3600
+@   IN  SOA ns1.fcb.wfl.lan. admin.fcb.wfl.lan. (
+            2026062201 3600 900 604800 3600 )
+
+@           IN  NS      ns1.fcb.wfl.lan.
+
+1           IN  PTR     gw-players.fcb.wfl.lan.
+65          IN  PTR     gw-tech.fcb.wfl.lan.
+97          IN  PTR     gw-admin.fcb.wfl.lan.
+129         IN  PTR     gw-net.fcb.wfl.lan.
+137         IN  PTR     gw-srv.fcb.wfl.lan.
+138         IN  PTR     ns1.fcb.wfl.lan.
