@@ -1,0 +1,15 @@
+; ============================================================
+;  Reverse zone: 172.20.129.0/24 (Manchester City)
+; ============================================================
+$TTL 3600
+@   IN  SOA ns1.mcy.wfl.lan. admin.mcy.wfl.lan. (
+            2026062201 3600 900 604800 3600 )
+
+@           IN  NS      ns1.mcy.wfl.lan.
+
+1           IN  PTR     gw-players.mcy.wfl.lan.
+65          IN  PTR     gw-tech.mcy.wfl.lan.
+97          IN  PTR     gw-admin.mcy.wfl.lan.
+129         IN  PTR     gw-net.mcy.wfl.lan.
+137         IN  PTR     gw-srv.mcy.wfl.lan.
+138         IN  PTR     ns1.mcy.wfl.lan.

@@ -1,0 +1,21 @@
+; ============================================================
+;  Forward zone: juv.wfl.lan
+;  Club DNS server: 172.20.132.138
+; ============================================================
+$TTL 3600
+@   IN  SOA ns1.juv.wfl.lan. admin.juv.wfl.lan. (
+            2026062201 3600 900 604800 3600 )
+
+@           IN  NS      ns1.juv.wfl.lan.
+
+ns1         IN  A       172.20.132.138
+www         IN  A       172.20.132.138
+sftp        IN  A       172.20.132.138
+dhcp        IN  A       172.20.132.138
+server      IN  CNAME   ns1.juv.wfl.lan.
+
+gw-players  IN  A       172.20.132.1
+gw-tech     IN  A       172.20.132.65
+gw-admin    IN  A       172.20.132.97
+gw-net      IN  A       172.20.132.129
+gw-srv      IN  A       172.20.132.137

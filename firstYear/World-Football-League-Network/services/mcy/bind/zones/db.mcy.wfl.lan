@@ -1,0 +1,21 @@
+; ============================================================
+;  Forward zone: mcy.wfl.lan
+;  Club DNS server: 172.20.129.138
+; ============================================================
+$TTL 3600
+@   IN  SOA ns1.mcy.wfl.lan. admin.mcy.wfl.lan. (
+            2026062201 3600 900 604800 3600 )
+
+@           IN  NS      ns1.mcy.wfl.lan.
+
+ns1         IN  A       172.20.129.138
+www         IN  A       172.20.129.138
+sftp        IN  A       172.20.129.138
+dhcp        IN  A       172.20.129.138
+server      IN  CNAME   ns1.mcy.wfl.lan.
+
+gw-players  IN  A       172.20.129.1
+gw-tech     IN  A       172.20.129.65
+gw-admin    IN  A       172.20.129.97
+gw-net      IN  A       172.20.129.129
+gw-srv      IN  A       172.20.129.137

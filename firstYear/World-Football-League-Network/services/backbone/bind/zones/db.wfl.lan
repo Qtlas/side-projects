@@ -1,0 +1,29 @@
+; ============================================================
+;  Forward zone: wfl.lan
+;  WFL backbone DNS: 172.20.128.6
+; ============================================================
+$TTL 3600
+@   IN  SOA ns1.wfl.lan. admin.wfl.lan. (
+            2026062201  ; Serial
+            3600        ; Refresh
+            900         ; Retry
+            604800      ; Expire
+            3600 )      ; Negative TTL
+
+@           IN  NS      ns1.wfl.lan.
+
+ns1         IN  A       172.20.128.6
+ntp         IN  A       172.20.128.6
+gw-backbone IN  A       172.20.128.1
+
+mcy         IN  NS      ns1.mcy.wfl.lan.
+bvb         IN  NS      ns1.bvb.wfl.lan.
+fcb         IN  NS      ns1.fcb.wfl.lan.
+juv         IN  NS      ns1.juv.wfl.lan.
+ajx         IN  NS      ns1.ajx.wfl.lan.
+
+ns1.mcy     IN  A       172.20.129.138
+ns1.bvb     IN  A       172.20.130.138
+ns1.fcb     IN  A       172.20.131.138
+ns1.juv     IN  A       172.20.132.138
+ns1.ajx     IN  A       172.20.133.138
